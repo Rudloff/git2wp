@@ -2,6 +2,7 @@
 	"name": "rudloff/git2wp",
 	"description": "Push WordPress plugin from a Git repository to the WordPress SVN repository",
 	"license": "GPL-3.0",
+	"type": "project",
 	"require": {
 		"symfony/console": "~3.0.0",
 		"cs278/mktemp": "dev-master",
