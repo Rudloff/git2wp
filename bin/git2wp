@@ -21,5 +21,7 @@ use AW2MW\ExportAddressCommand;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
-$application->add(new SyncCommand());
+$syncCmd = new SyncCommand();
+$application->add($syncCmd);
+$application->setDefaultCommand($syncCmd->getName());
 $application->run();
