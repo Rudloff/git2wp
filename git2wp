@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Declare CLI commands
+ *
+ * PHP version 5.6
+ *
+ * @category Git2WP
+ * @package  Git2WP
+ * @author   Pierre Rudloff <contact@rudloff.pro>
+ * @license  GPL https://www.gnu.org/licenses/gpl.html
+ * @link     https://github.com/Rudloff/git2wp
+ */
+require_once __DIR__.'/vendor/autoload.php';
+use Git2WP\SyncCommand;
+use AW2MW\ExportAddressCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$application->add(new SyncCommand());
+$application->run();
