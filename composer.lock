@@ -4,52 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b6ce7ca4c76244bac9a4df24fefd28b",
-    "content-hash": "009a284f615d683d83299f1581401b0b",
+    "hash": "a0afafaab58af74997049c44258c4884",
+    "content-hash": "fe035fdae000799cc277bbd98dfb225e",
     "packages": [
-        {
-            "name": "cs278/mktemp",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cs278/php-mktemp.git",
-                "reference": "d6bf280f90ebfaea11f2341b44e880b32a08938b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cs278/php-mktemp/zipball/d6bf280f90ebfaea11f2341b44e880b32a08938b",
-                "reference": "d6bf280f90ebfaea11f2341b44e880b32a08938b",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 | ^7.0.0"
-            },
-            "require-dev": {
-                "cs278/coding-standard": "^1.0.0",
-                "phpunit/phpunit": "^4.8.21"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "Cs278\\Mktemp\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Smith",
-                    "email": "chris@cs278.org"
-                }
-            ],
-            "description": "Create temporary files and directories using PHP safely.",
-            "time": "2016-01-24 23:40:13"
-        },
         {
             "name": "gitonomy/gitlib",
             "version": "v1.0.0",
@@ -340,9 +297,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "cs278/mktemp": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

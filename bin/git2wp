@@ -11,7 +11,11 @@
  * @license  GPL https://www.gnu.org/licenses/gpl.html
  * @link     https://github.com/Rudloff/git2wp
  */
-require_once __DIR__.'/vendor/autoload.php';
+if (file_exists(__DIR__.'/../vendor/autoload.php')) {
+    require __DIR__.'/../vendor/autoload.php';
+} else {
+    require __DIR__.'/../../../autoload.php';
+}
 use Git2WP\SyncCommand;
 use AW2MW\ExportAddressCommand;
 use Symfony\Component\Console\Application;
