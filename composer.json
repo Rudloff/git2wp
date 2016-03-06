@@ -17,5 +17,17 @@
 	},
 	"bin": [
 		"bin/git2wp"
-	]
+	],
+	"keywords": ["WordPress", "Git", "SVN", "Subversion", "plugin"],
+	"homepage": "https://github.com/Rudloff/git2wp",
+	"authors": [{
+		"name": "Pierre Rudloff",
+		"email": "contact@rudloff.pro",
+		"homepage": "https://rudloff.pro/",
+		"role": "Developer"
+	}],
+	"support": {
+		"issues": "https://github.com/Rudloff/git2wp/issues",
+		"source": "https://github.com/Rudloff/git2wp"
+	}
 }
