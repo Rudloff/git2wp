@@ -89,7 +89,11 @@ class SyncCommand extends Command
 
         $output->writeln('Checking out <info>'.$svnUrl.'</info>');
         //Using exec() until we find a good SVN library
-        exec('svn checkout '.$svnUrl.' '.$this->svnDir);
+        exec('svn checkout '.$svnUrl.' '.$this->svnDir, $execOutput, $execCode);
+        if ($execCode > 0) {
+            $output->writeln('<error>Error while checking out the SVN repository</error>');
+            return;
+        }
 
         $this->repository = new Repository('./');
         $references = $this->repository->getReferences();
