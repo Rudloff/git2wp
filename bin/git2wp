@@ -20,7 +20,7 @@ use Git2WP\SyncCommand;
 use AW2MW\ExportAddressCommand;
 use Symfony\Component\Console\Application;
 
-$application = new Application();
+$application = new Application('git2wp', '0.1.2');
 $syncCmd = new SyncCommand();
 $application->add($syncCmd);
 $application->setDefaultCommand($syncCmd->getName());
