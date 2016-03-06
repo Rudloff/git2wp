@@ -1,6 +1,6 @@
 {
 	"name": "rudloff/git2wp",
-	"description": "Push WordPress plugin from a Git repository to the WordPress SVN repository",
+	"description": "Push a WordPress plugin from a Git repository to the WordPress SVN repository",
 	"license": "GPL-3.0",
 	"type": "project",
 	"require": {
