@@ -17,7 +17,6 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Cs278\Mktemp;
 use Gitonomy\Git\Repository;
 
 /**
@@ -80,8 +79,9 @@ class SyncCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->output = $output;
-        $this->tempDir = Mktemp\temporaryDir();
+        $this->tempDir = sys_get_temp_dir().'/'.uniqid('git2wp');
         $output->writeln('Using temporary folder <info>'.$this->tempDir.'</info>');
+        mkdir($this->tempDir);
 
         $this->svnDir = $this->tempDir.'/wp-svn/';
         $svnUrl = 'https://plugins.svn.wordpress.org/'.
