@@ -1,33 +1,35 @@
 <?php
 /**
- * SyncCommand class
+ * SyncCommand class.
  *
  * PHP version 5.6
  *
  * @category Git2WP
- * @package  Git2WP
+ *
  * @author   Pierre Rudloff <contact@rudloff.pro>
  * @license  GPL https://www.gnu.org/licenses/gpl.html
+ *
  * @link     https://github.com/Rudloff/git2wp
  */
+
 namespace Git2WP;
 
+use Gitonomy\Git\Repository;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Gitonomy\Git\Repository;
 
 /**
- * Sync CLI command
+ * Sync CLI command.
  *
  * PHP version 5.6
  *
  * @category Git2WP
- * @package  Git2WP
+ *
  * @author   Pierre Rudloff <contact@rudloff.pro>
  * @license  GPL https://www.gnu.org/licenses/gpl.html
+ *
  * @link     https://github.com/Rudloff/git2wp
  */
 class SyncCommand extends Command
@@ -38,7 +40,7 @@ class SyncCommand extends Command
     private $svnDir;
 
     /**
-     * Configure command
+     * Configure command.
      *
      * @return void
      */
@@ -60,7 +62,7 @@ class SyncCommand extends Command
             'Exporting <info>'.$gitTag.'</info> to <info>'.$svnTag.'</info>'
         );
         $zipFile = $this->tempDir.'/wp-archive-'.$gitTag.'.zip';
-        $this->repository->run('archive', array('-o', $zipFile, $gitTag));
+        $this->repository->run('archive', ['-o', $zipFile, $gitTag]);
         $zip = new \ZipArchive();
         if ($zip->open($zipFile) === true) {
             $zip->extractTo($this->svnDir.'/'.$svnTag);
@@ -69,7 +71,7 @@ class SyncCommand extends Command
     }
 
     /**
-     * Execute command
+     * Execute command.
      *
      * @param InputInterface  $input  Input
      * @param OutputInterface $output Output
@@ -92,6 +94,7 @@ class SyncCommand extends Command
         exec('svn checkout '.$svnUrl.' '.$this->svnDir, $execOutput, $execCode);
         if ($execCode > 0) {
             $output->writeln('<error>Error while checking out the SVN repository</error>');
+
             return;
         }
 
@@ -105,7 +108,7 @@ class SyncCommand extends Command
         $gitUrl = trim(
             $this->repository->run(
                 'config',
-                array('--get', 'remote.origin.url')
+                ['--get', 'remote.origin.url']
             )
         );
 
